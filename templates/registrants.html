@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+<!-- thead bruges til at specificcere indholdet af en table-->
+<!-- tr laver en table row-->
+<!-- th laver en table heading, altså en kolonne med navnene på værdierne-->
+    <h1>Registrants</h1>
+    <table>
+        <thead>
+                <tr>
+                    <th> Name </th>
+                    <th> Sport</th>
+                </tr>
+        </thead>
+        <tbody>
+            {% for registrant in registrants %}
+                <tr>
+                    <td>{{registrant.name}}</td>
+                    <td>{{registrant.sport}}</td>
+                </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+{% endblock %}

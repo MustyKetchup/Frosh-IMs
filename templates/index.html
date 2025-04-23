@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lan = "en">
+    <!-- "<Head> indeholder metadataerne/information om siden"-->
+    <head>
+    <!-- meta taggen fortæller hjemmesiden nogle essentielle inforationer. Viewport betyder at det kun gælder i den synlige  side af hjemmesden-->
+        <meta name = "viewport" content = "initial-scale=1, width=device-width">
+    </head>
+
+    <!-- <body> bruges til den synlige del af siden -->
+    <body>
+        <!-- post bruges til at sende data sikkert modsat get, som viser data i URL'en-->
+        <!-- name="name" vil modtage feltetsværdi under variabelnavnet "name"-->
+        <!-- place holder viser bare en grå tekst i feltet indtil brugern skriver noget-->
+        <!-- autofocus sætter automatisk courseren over ved feltet når siden loades-->
+        <!-- Select opretter en dropdown menu. "name" er variabelnavnet til dopdown menuen. <option  ... </option> opretter en mulighed i dropdown menuen, hvor der kan stå noget tekst og en værdi der repræsentere muligheden. -->
+        <!-- disabled selected. gør at det gør at det ikke kan vælges. Dog forhåndsvises det, da det er den første.-->
+        <!-- <form ... </form> bruges når der skal indsamles data fra brugeren. action = " " bestemmer hvor dataerne skal sendes til.  -->
+        <!-- required gør at du skal indsætte dataen for at komme videre-->
+        <form action = "/register" method = "post">
+            <input autocomplete="off" autofocus name="name" placeholder="Name: "  type="text">
+            <select name="sport" >
+                <option disabled selected value = "">Sport</option>
+                <!-- starter sport loopen med Jinja sytax-->
+                {% for sport in sports %}
+                <!-- laver en select menu med option-->
+                    <option value = "{{sport}}">{{sport}}</option>
+                <!-- laver sådan nogle runde cirkler som man kan select-->
+                    <input name= "sport" type = "radio" value="{{sport}}"> {{sport}} 
+                    
+                    
+                {% endfor %}
+                <!-- slutter Jinja for loopen-->
+                
+            </select>
+
+            <!-- laver submit knap hvor der står register som er det grå tekst.-->
+            <button type="submit">Register</button>
+        </form>
+    </body>
+</html>
