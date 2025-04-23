@@ -10,6 +10,7 @@ def index():
 
 SPORTS = ["Basketball","Soccer","Ultimate"]
 
+Hej = 1213123
 
 # "REGISTRANTS  = {}"  gemmer registrants i memory
 
